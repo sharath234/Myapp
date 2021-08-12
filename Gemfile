@@ -56,4 +56,5 @@ gem 'devise'
 gem 'cancancan'
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.1.0'
 

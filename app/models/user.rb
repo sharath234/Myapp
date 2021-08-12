@@ -26,5 +26,5 @@ class User < ApplicationRecord
         ["lower(user_name) = :value OR lower(email) = :value",
         { value: login.strip.downcase}]).first
     end
-
+ 
 end

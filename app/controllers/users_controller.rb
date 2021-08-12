@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    if params[:user_name]
+      @users = User.where('user_name LIKE ?', "%#{params[:user_name]}%").paginate(:page => params[:page], :per_page=>5)
+    else
+      @users  = User.all.paginate(:page => params[:page], :per_page=>5)
+    end
   end
 
   # GET /users/1 or /users/1.json
